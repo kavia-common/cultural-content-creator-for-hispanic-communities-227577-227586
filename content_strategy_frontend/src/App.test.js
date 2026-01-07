@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders preview panel and default topic", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Previsualización/i)).toBeInTheDocument();
+  expect(
+    screen.getByDisplayValue(/Telemedicina para todos/i)
+  ).toBeInTheDocument();
 });
